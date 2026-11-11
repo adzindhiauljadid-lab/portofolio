@@ -1,0 +1,869 @@
+<!DOCTYPE html>
+<html lang="id">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Adzin Dhiaul Jadid | Portofolio & AJIN MARKET</title>
+
+<style>
+:root {
+  --bg:#080D16;
+  --card:#101725;
+  --cyan:#818cf8;
+  --blue:#38bdf8;
+  --text:#f1f5f9;
+  --muted:#94a3b8;
+  --border:#1e293b;
+}
+
+* {
+  margin:0;
+  padding:0;
+  box-sizing:border-box;
+  font-family:Segoe UI,Arial,sans-serif;
+}
+
+html { scroll-behavior:smooth; }
+
+body {
+  background:var(--bg);
+  color:var(--text);
+  line-height:1.6;
+}
+
+.container {
+  width:90%;
+  max-width:1150px;
+  margin:auto;
+}
+
+a {
+  text-decoration:none;
+  color:inherit;
+}
+
+/* NAVBAR */
+header {
+  position:sticky;
+  top:0;
+  z-index:100;
+  background:#080d16ee;
+  backdrop-filter:blur(15px);
+  border-bottom:1px solid var(--border);
+}
+
+nav {
+  min-height:75px;
+  display:flex;
+  align-items:center;
+  justify-content:space-between;
+  gap:20px;
+}
+
+.logo {
+  font-size:22px;
+  font-weight:900;
+  letter-spacing:1px;
+}
+
+.logo span { color:var(--cyan); }
+
+.nav-links {
+  display:flex;
+  gap:25px;
+  color:var(--muted);
+  font-size:14px;
+  font-weight: 500;
+}
+
+.nav-links a:hover { color:var(--cyan); }
+
+.nav-button,.button {
+  background:linear-gradient(110deg,var(--cyan),var(--blue));
+  color:#080D16;
+  padding:11px 18px;
+  border-radius:10px;
+  font-weight:800;
+  border:none;
+  cursor:pointer;
+  display:inline-block;
+}
+
+/* HERO */
+.hero {
+  min-height:570px;
+  display:grid;
+  grid-template-columns:1.1fr .9fr;
+  align-items:center;
+  gap:40px;
+  padding:75px 0;
+}
+
+.label {
+  color:var(--cyan);
+  font-size:13px;
+  letter-spacing:3px;
+  font-weight:bold;
+}
+
+.hero h1 {
+  font-size:clamp(32px,4.5vw,52px);
+  line-height:1.15;
+  margin:20px 0;
+}
+
+.hero h1 span { color:var(--cyan); display:block; margin-top:5px; }
+
+.hero p {
+  color:var(--muted);
+  max-width:550px;
+}
+
+.hero-buttons {
+  display:flex;
+  gap:12px;
+  margin-top:28px;
+  flex-wrap:wrap;
+}
+
+.outline {
+  border:1px solid var(--border);
+  background:rgba(255,255,255,0.03);
+  padding:11px 18px;
+  border-radius:10px;
+  color:var(--text);
+  font-weight: 600;
+}
+
+.preview {
+  background:linear-gradient(145deg,#131d31,#0d1320);
+  border:1px solid var(--border);
+  padding:25px;
+  border-radius:25px;
+  box-shadow:0 20px 40px rgba(0,0,0,0.4);
+  text-align:center;
+  display:flex;
+  flex-direction:column;
+  align-items:center;
+  justify-content:center;
+}
+
+/* SECTION */
+section { padding:75px 0; }
+
+.section-title { margin-bottom:30px; }
+
+.section-title small {
+  color:var(--cyan);
+  letter-spacing:3px;
+  font-weight:bold;
+}
+
+.section-title h2 {
+  font-size:35px;
+  margin-top:5px;
+}
+
+.section-title p {
+  color:var(--muted);
+  margin-top:8px;
+  max-width:550px;
+}
+
+/* ABOUT SECTION */
+.about-grid {
+  display:grid;
+  grid-template-columns: 1.3fr 0.7fr;
+  gap:20px;
+}
+
+.box {
+  background:var(--card);
+  border:1px solid var(--border);
+  padding:30px;
+  border-radius:18px;
+  box-shadow: 0 10px 30px rgba(0,0,0,0.2);
+}
+
+.box h3 {
+  color: var(--cyan);
+  font-size: 20px;
+  margin-bottom: 12px;
+  display: flex;
+  align-items: center;
+  gap: 10px;
+}
+
+.box p { color:var(--muted); font-size: 14px; margin-bottom: 20px; }
+
+.biodata-grid {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 15px;
+  border-top: 1px solid var(--border);
+  padding-top: 20px;
+}
+
+.biodata-item small {
+  color: var(--cyan);
+  font-size: 11px;
+  font-weight: bold;
+  letter-spacing: 1px;
+  display: block;
+  margin-bottom: 4px;
+}
+
+.biodata-item span {
+  font-weight: 600;
+  font-size: 14px;
+}
+
+.skills {
+  display:flex;
+  flex-wrap:wrap;
+  gap:9px;
+  margin-top:15px;
+}
+
+.skills span {
+  background:#17223b;
+  color:#c7d2fe;
+  border:1px solid #283655;
+  padding:7px 12px;
+  border-radius:8px;
+  font-size:13px;
+  font-weight: 600;
+}
+
+/* STORE / PRODUK */
+.store-category-title {
+  font-size: 22px;
+  color: var(--text);
+  margin: 40px 0 20px 0;
+  border-left: 4px solid var(--cyan);
+  padding-left: 12px;
+}
+
+.products {
+  display:grid;
+  grid-template-columns:repeat(3,1fr);
+  gap:18px;
+}
+
+.product {
+  background:var(--card);
+  border:1px solid var(--border);
+  padding:17px;
+  border-radius:17px;
+  transition:.25s;
+}
+
+.product:hover {
+  transform:translateY(-5px);
+  border-color:var(--cyan);
+  box-shadow: 0 10px 25px rgba(129, 140, 248, 0.1);
+}
+
+.product-image {
+  height: 130px;
+  background: #141c2e;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  border-radius: 13px;
+  overflow: hidden;
+  padding: 10px;
+}
+
+.product-image img {
+  max-width: 100%;
+  max-height: 100%;
+  object-fit: contain;
+  border-radius: 8px;
+}
+
+.category {
+  color:var(--cyan);
+  font-size:12px;
+  font-weight:bold;
+  letter-spacing:1px;
+  margin-top:12px;
+  display:block;
+}
+
+.product h3 { margin-top:4px; font-size:18px; }
+
+.product p {
+  color:var(--muted);
+  font-size:13px;
+  margin:6px 0 12px;
+}
+
+.product-bottom {
+  display:flex;
+  justify-content:space-between;
+  align-items:center;
+  gap:8px;
+  position: relative;
+  z-index: 5;
+}
+
+.price { font-weight:bold; font-size:14px; color:var(--cyan); }
+
+.buy {
+  background:var(--cyan);
+  color:#080D16;
+  border:none;
+  padding:8px 14px;
+  border-radius:8px;
+  font-weight:bold;
+  cursor:pointer;
+  position: relative;
+  z-index: 10;
+}
+
+.custom-request-box {
+  background:linear-gradient(145deg,var(--card),#131d31);
+  border:1px dashed var(--cyan);
+  padding:30px;
+  border-radius:17px;
+  text-align:center;
+  margin-top:40px;
+}
+
+.custom-request-box h3 { color:var(--cyan); margin-bottom:10px; }
+.custom-request-box p { color:var(--muted); max-width:600px; margin:0 auto 20px; font-size:14px; }
+
+/* PROJECTS */
+.projects {
+  display:grid;
+  grid-template-columns:repeat(3,1fr);
+  gap:18px;
+}
+
+.project-number {
+  color:var(--cyan);
+  font-size:13px;
+  font-weight:bold;
+  letter-spacing:2px;
+}
+
+.project-icon {
+  font-size:35px;
+  margin:18px 0 8px;
+}
+
+.project p {
+  color:var(--muted);
+  font-size:14px;
+  margin-top:8px;
+}
+
+/* CONTACT */
+.contact-grid {
+  display:grid;
+  grid-template-columns:1fr 1fr;
+  gap:18px;
+}
+
+.contact-grid p { color:var(--muted); margin-top:10px; }
+
+.contact-link {
+  display:block;
+  margin-top:15px;
+  color:var(--cyan);
+}
+
+/* FOOTER */
+footer {
+  border-top:1px solid var(--border);
+  padding:25px 0;
+  color:var(--muted);
+  text-align:center;
+  font-size:13px;
+  background:#080D16;
+}
+
+/* MODAL / POPUP PESANAN (DIPERBAIKI MENGGUNAKAN FLEXBOX) */
+.modal-bg {
+  display: none;
+  position: fixed;
+  inset: 0;
+  background: rgba(0,0,0,0.8);
+  backdrop-filter: blur(5px);
+  z-index: 99999;
+  justify-content: center;
+  align-items: center;
+  padding: 15px;
+}
+
+.modal-bg.active {
+  display: flex;
+}
+
+.modal {
+  background: var(--card);
+  border: 1px solid var(--border);
+  padding: 25px;
+  border-radius: 17px;
+  width: 100%;
+  max-width: 400px;
+  position: relative;
+  z-index: 100000;
+  box-shadow: 0 20px 50px rgba(0,0,0,0.5);
+}
+
+.modal input {
+  width: 100%;
+  padding: 12px;
+  margin: 10px 0;
+  background: #080D16;
+  color: white;
+  border: 1px solid var(--border);
+  border-radius: 9px;
+  outline: none;
+}
+
+.modal button { margin-top: 10px; }
+
+/* RESPONSIVE */
+@media(max-width:900px) {
+  .products,.projects,.about-grid { grid-template-columns:1fr; }
+}
+
+@media(max-width:800px) {
+  .hero { grid-template-columns:1fr; }
+}
+
+@media(max-width:600px) {
+  nav { flex-wrap:wrap; padding:13px 0; }
+  .nav-links {
+    order:3;
+    width:100%;
+    overflow:auto;
+    gap:17px;
+  }
+  .nav-links a { white-space:nowrap; }
+  .about-grid,.contact-grid,.products,.projects {
+    grid-template-columns:1fr;
+  }
+}
+</style>
+</head>
+
+<body>
+
+<header>
+<nav class="container">
+  <a href="#home" class="logo">AJIN<span>.</span></a>
+
+  <div class="nav-links">
+    <a href="#home">Beranda</a>
+    <a href="#about">Tentang</a>
+    <a href="#projects">Proyek</a>
+    <a href="#store">Toko</a>
+    <a href="#contact">Kontak</a>
+  </div>
+
+  <a href="#store" class="nav-button">Jelajahi Toko ↗</a>
+</nav>
+</header>
+
+<main>
+<div class="container hero" id="home">
+
+  <div>
+    <div class="label">DIGITAL ENTREPRENEUR & STUDENT</div>
+
+    <h1>
+      Halo, Saya Adzin Dhiaul Jadid.
+      <span>Pelajar TJKT & Digital Business Enthusiast.</span>
+    </h1>
+
+    <p>
+      Siswa kelas XI TJKT di SMK Ma'arif 1 Nanggulan yang memiliki ketertarikan pada dunia teknologi, bisnis digital, dan pengembangan website. Mengelola AJIN MARKET sebagai wadah jual beli berbagai kebutuhan digital sekaligus mengembangkan kemampuan di bidang teknologi.
+    </p>
+
+    <div class="hero-buttons">
+      <a href="#projects" class="button">Lihat Proyek Saya →</a>
+      <a href="#store" class="outline">Jelajahi Toko</a>
+    </div>
+  </div>
+
+  <div class="preview">
+    <img src="profil.jpeg" alt="Adzin Dhiaul Jadid" style="width: 210px; height: 260px; object-fit: cover; border-radius: 20px; border: 2px solid var(--cyan); box-shadow: 0 10px 30px rgba(129, 140, 248, 0.2);">
+    <h3 style="margin-top: 15px; color: var(--text); font-size: 20px; font-weight: 800;">Adzin Dhiaul Jadid</h3>
+    <p style="color: var(--muted); font-size: 13px; margin-top: 5px;">Pelajar TJKT & Digital Entrepreneur</p>
+  </div>
+
+</div>
+
+<!-- TENTANG SAYA -->
+<section id="about">
+<div class="container">
+  <div class="section-title">
+    <small>TENTANG SAYA</small>
+    <h2>Teknologi, Bisnis, & Kreativitas Digital.</h2>
+    <p>Mengenal latar belakang pendidikan, identitas, dan keahlian teknis yang saya kembangkan.</p>
+  </div>
+
+  <div class="about-grid">
+    <div class="box">
+      <h3>👤 Profil & Pendidikan</h3>
+      <p>
+        Saya merupakan pelajar jurusan Teknik Jaringan Komputer dan Telekomunikasi (TJKT) yang tertarik pada perkembangan teknologi dan bisnis digital. Selain mempelajari dasar-dasar jaringan komputer dan pengembangan web, saya juga menjalankan AJIN MARKET yang berfokus pada jual beli produk dan kebutuhan digital.
+      </p>
+
+      <div class="biodata-grid">
+        <div class="biodata-item">
+          <small>NAMA</small>
+          <span>Adzin Dhiaul Jadid</span>
+        </div>
+        <div class="biodata-item">
+          <small>PROFESI</small>
+          <span>Pelajar & Digital Entrepreneur</span>
+        </div>
+        <div class="biodata-item">
+          <small>PENDIDIKAN</small>
+          <span>SMK Ma'arif 1 Nanggulan</span>
+        </div>
+        <div class="biodata-item">
+          <small>KELAS</small>
+          <span>XI TJKT</span>
+        </div>
+        <div class="biodata-item">
+          <small>LOKASI</small>
+          <span>Indonesia</span>
+        </div>
+      </div>
+    </div>
+
+    <div class="box">
+      <h3>💻 Keahlian Utama</h3>
+      <p>Kombinasi skill teknologi web, jaringan, dan manajemen bisnis digital.</p>
+
+      <div class="skills">
+        <span>HTML Dasar</span>
+        <span>CSS Dasar</span>
+        <span>JavaScript Pemula</span>
+        <span>Dasar Jaringan Komputer</span>
+        <span>Jual Beli Akun Game</span>
+        <span>Kebutuhan Sosmed</span>
+        <span>Aplikasi Premium</span>
+        <span>Manajemen Toko Digital</span>
+      </div>
+    </div>
+  </div>
+</div>
+</section>
+
+<!-- PROYEK UNGGULAN -->
+<section id="projects">
+<div class="container">
+  <div class="section-title">
+    <small>PORTOFOLIO SAYA</small>
+    <h2>Proyek Unggulan.</h2>
+    <p>Tiga mini proyek utama yang dikembangkan sebagai siswa TJKT & pengembang web.</p>
+  </div>
+
+  <div class="projects">
+    <div class="box project">
+      <div class="project-number">PROYEK 01</div>
+      <div class="project-icon">💻</div>
+      <h3>Website AJIN MARKET</h3>
+      <p>Pengembangan website toko digital menggunakan HTML dan CSS serta mulai mempelajari penerapan JavaScript untuk membangun tampilan dan fitur interaktif.</p>
+    </div>
+
+    <div class="box project">
+      <div class="project-number">PROYEK 02</div>
+      <div class="project-icon">📱</div>
+      <h3>Digital Account & Social Media Business</h3>
+      <p>Pengelolaan bisnis jual beli berbagai kebutuhan digital, mulai dari akun game, akun media sosial, hingga aplikasi premium.</p>
+    </div>
+
+    <div class="box project">
+      <div class="project-number">PROYEK 03</div>
+      <div class="project-icon">📦</div>
+      <h3>Digital Product Management</h3>
+      <p>Pengelolaan inventaris, kurasi produk digital, serta pelayanan transaksi dan komunikasi pelanggan yang aman dan terpercaya.</p>
+    </div>
+  </div>
+</div>
+</section>
+
+<!-- TOKO DIGITAL -->
+<section id="store">
+<div class="container">
+  <div class="section-title">
+    <small>TOKO DIGITAL</small>
+    <h2>Jelajahi Produk Kami.</h2>
+    <p>Produk dikelompokkan ke dalam kategori terpisah agar lebih mudah dipilih dan dipesan.</p>
+  </div>
+
+  <!-- BAGIAN 1: AKUN GAME -->
+  <h3 class="store-category-title">🎮 Penjualan Akun Game</h3>
+  <div class="products">
+    <div class="product">
+      <div class="product-image">
+        <img src="https://i.pinimg.com/736x/63/8d/4a/638d4aef8b171542349f870a271681b9.jpg" alt="Mobile Legends">
+      </div>
+      <span class="category">AKUN GAME</span>
+      <h3>MOBILE LEGENDS (ML)</h3>
+      <p>Akun MLBB siap pakai, skin lengkap & aman.</p>
+      <div class="product-bottom">
+        <span class="price">Berdasarkan Request</span>
+        <button class="buy" onclick="order('Mobile Legends (ML)')">Pesan</button>
+      </div>
+    </div>
+
+    <div class="product">
+      <div class="product-image">
+        <img src="https://i.pinimg.com/736x/61/43/69/6143697c20ebd8d405de464e95afe019.jpg" alt="Free Fire">
+      </div>
+      <span class="category">AKUN GAME</span>
+      <h3>FREE FIRE (FF)</h3>
+      <p>Akun FF old / sultan bergaransi aman.</p>
+      <div class="product-bottom">
+        <span class="price">Berdasarkan Request</span>
+        <button class="buy" onclick="order('Free Fire (FF)')">Pesan</button>
+      </div>
+    </div>
+
+    <div class="product">
+      <div class="product-image">
+        <img src="https://i.pinimg.com/736x/6c/ff/53/6cff530cefe3c08a01e01353e676d3ad.jpg" alt="PUBG Mobile">
+      </div>
+      <span class="category">AKUN GAME</span>
+      <h3>PUBG MOBILE</h3>
+      <p>Akun PUBG tier tinggi siap mabar.</p>
+      <div class="product-bottom">
+        <span class="price">Berdasarkan Request</span>
+        <button class="buy" onclick="order('PUBG Mobile')">Pesan</button>
+      </div>
+    </div>
+
+    <div class="product">
+      <div class="product-image">
+        <img src="https://i.pinimg.com/736x/eb/20/30/eb203036af2bf931259d9c2ae254b2cd.jpg" alt="Roblox">
+      </div>
+      <span class="category">AKUN GAME</span>
+      <h3>ROBLOX</h3>
+      <p>Akun Roblox item langka & robux ready.</p>
+      <div class="product-bottom">
+        <span class="price">Berdasarkan Request</span>
+        <button class="buy" onclick="order('Roblox')">Pesan</button>
+      </div>
+    </div>
+
+    <div class="product">
+      <div class="product-image">
+        <img src="https://i.pinimg.com/736x/af/c1/ed/afc1ed2994a23926acdda91713b83e51.jpg" alt="Honor of Kings">
+      </div>
+      <span class="category">AKUN GAME</span>
+      <h3>HONOR OF KINGS (HOK)</h3>
+      <p>Akun HOK level tinggi & hero lengkap.</p>
+      <div class="product-bottom">
+        <span class="price">Berdasarkan Request</span>
+        <button class="buy" onclick="order('Honor of Kings (HOK)')">Pesan</button>
+      </div>
+    </div>
+  </div>
+
+  <!-- BAGIAN 2: AKUN MEDIA SOSIAL -->
+  <h3 class="store-category-title">📱 Penjualan Akun Media Sosial</h3>
+  <div class="products">
+    <div class="product">
+      <div class="product-image">
+        <img src="https://i.pinimg.com/1200x/e4/15/d6/e415d6bd27900cc066d0b8b23a7f1055.jpg" alt="TikTok">
+      </div>
+      <span class="category">AKUN MEDIA SOSIAL</span>
+      <h3>AKUN TIKTOK</h3>
+      <p>Akun TikTok siap pakai untuk konten & branding.</p>
+      <div class="product-bottom">
+        <span class="price">Berdasarkan Request</span>
+        <button class="buy" onclick="order('Akun TikTok')">Pesan</button>
+      </div>
+    </div>
+
+    <div class="product">
+      <div class="product-image">
+        <img src="https://i.pinimg.com/736x/3c/0b/52/3c0b5296e29c391d50a7580b3e949a34.jpg" alt="Instagram">
+      </div>
+      <span class="category">AKUN MEDIA SOSIAL</span>
+      <h3>AKUN INSTAGRAM</h3>
+      <p>Akun Instagram siap pakai followers aktif.</p>
+      <div class="product-bottom">
+        <span class="price">Berdasarkan Request</span>
+        <button class="buy" onclick="order('Akun Instagram')">Pesan</button>
+      </div>
+    </div>
+
+    <div class="product">
+      <div class="product-image">
+        <img src="https://i.pinimg.com/736x/c1/d9/6c/c1d96c1f7a256e1a4dc31da44d715178.jpg" alt="X Twitter">
+      </div>
+      <span class="category">AKUN MEDIA SOSIAL</span>
+      <h3>AKUN X (TWITTER)</h3>
+      <p>Akun X / Twitter siap pakai & terverifikasi.</p>
+      <div class="product-bottom">
+        <span class="price">Berdasarkan Request</span>
+        <button class="buy" onclick="order('Akun X (Twitter)')">Pesan</button>
+      </div>
+    </div>
+  </div>
+
+  <!-- BAGIAN 3: APLIKASI PREMIUM -->
+  <h3 class="store-category-title">✨ Aplikasi & Tools Premium</h3>
+  <div class="products">
+    <div class="product">
+      <div class="product-image">
+        <img src="https://i.pinimg.com/736x/e3/cc/01/e3cc01eb99c39c56f88ec1f48839fb6a.jpg" alt="Alight Motion">
+      </div>
+      <span class="category">APLIKASI PREMIUM</span>
+      <h3>ALIGHT MOTION (AM)</h3>
+      <p>Alight Motion Pro no watermark.</p>
+      <div class="product-bottom">
+        <span class="price">Berdasarkan Request</span>
+        <button class="buy" onclick="order('Alight Motion (AM)')">Pesan</button>
+      </div>
+    </div>
+
+    <div class="product">
+      <div class="product-image">
+        <img src="https://i.pinimg.com/1200x/b2/24/bc/b224bcfb58a1861dee8afc847a5d657d.jpg" alt="Canva">
+      </div>
+      <span class="category">APLIKASI PREMIUM</span>
+      <h3>CANVA</h3>
+      <p>Canva Pro / Edu untuk desain grafis profesional.</p>
+      <div class="product-bottom">
+        <span class="price">Berdasarkan Request</span>
+        <button class="buy" onclick="order('Canva Pro')">Pesan</button>
+      </div>
+    </div>
+
+    <div class="product">
+      <div class="product-image">
+        <img src="https://i.pinimg.com/1200x/5a/14/e7/5a14e72c126d18d0762764cfff0fae68.jpg" alt="CapCut">
+      </div>
+      <span class="category">APLIKASI PREMIUM</span>
+      <h3>CAPCUT</h3>
+      <p>CapCut Pro unlock semua fitur editor video.</p>
+      <div class="product-bottom">
+        <span class="price">Berdasarkan Request</span>
+        <button class="buy" onclick="order('CapCut Pro')">Pesan</button>
+      </div>
+    </div>
+  </div>
+
+  <div class="custom-request-box">
+    <h3>Mencari Produk / Layanan Lain?</h3>
+    <p>Jika produk atau akun yang kamu cari tidak tertera di atas, kamu bisa langsung menghubungi kami via WhatsApp atau pesan melalui akun media sosial resmi yang tersedia!</p>
+    <a href="https://wa.me/6283175551641" target="_blank" class="button">Hubungi via WhatsApp ↗</a>
+  </div>
+
+</div>
+</section>
+
+<!-- KONTAK -->
+<section id="contact">
+<div class="container">
+  <div class="section-title">
+    <small>KONTAK & BANTUAN</small>
+    <h2>Hubungi Kami.</h2>
+    <p>Punya pertanyaan atau ingin memesan produk lain? Silakan hubungi kontak resmi kami di bawah ini.</p>
+  </div>
+
+  <div class="contact-grid">
+    <div class="box">
+      <h3>Saluran Resmi Admin</h3>
+      <p>Hubungi kami melalui WhatsApp atau media sosial berikut:</p>
+
+      <a class="contact-link" href="https://wa.me/6283175551641" target="_blank">
+        ◉ WhatsApp — 083175551641 (Fast Response)
+      </a>
+
+      <a class="contact-link" href="https://www.instagram.com/ajinnomolto10?psln=MTN2ejAwdGdzOWVhYQ==" target="_blank">
+        ◎ Instagram — @ajinnomolto10
+      </a>
+
+      <a class="contact-link" href="https://tiktok.com/@ajennnn02" target="_blank">
+        ♪ TikTok — @ajennnn02
+      </a>
+    </div>
+
+    <div class="box">
+      <h3>AJIN MARKET</h3>
+      <p>Solusi terpercaya untuk akun game, media sosial, dan aplikasi premium pilihanmu.</p>
+      <a href="#home" class="button" style="margin-top:20px">Kembali ke Atas ↑</a>
+    </div>
+  </div>
+</div>
+</section>
+
+</main>
+
+<footer>
+  <div class="container">
+    © <span id="year"></span> AJIN MARKET. Hak Cipta Dilindungi.
+  </div>
+</footer>
+
+<!-- MODAL / POPUP PESANAN -->
+<div class="modal-bg" id="modal">
+  <div class="modal">
+    <h3>Pesan di AJIN MARKET</h3>
+    <p style="color:#94a3b8;font-size:13px">Isi data berikut untuk melanjutkan pesanan ke WhatsApp Admin.</p>
+
+    <form id="orderForm">
+      <input type="text" id="productName" readonly>
+      <input type="text" id="customerName" placeholder="Nama kamu" required>
+      <input type="text" id="customerContact" placeholder="Kontak / Catatan (opsional)">
+
+      <button class="button" type="submit" style="width:100%">
+        Kirim Pesanan ke WhatsApp
+      </button>
+    </form>
+
+    <button class="outline" onclick="closeModal()" style="margin-top:15px;width:100%">
+      Tutup
+    </button>
+  </div>
+</div>
+
+<script>
+document.getElementById("year").textContent = new Date().getFullYear();
+
+const nomorWhatsApp = "6283175551641";
+
+function order(product) {
+  document.getElementById("productName").value = product;
+  document.getElementById("modal").classList.add("active");
+}
+
+function closeModal() {
+  document.getElementById("modal").classList.remove("active");
+}
+
+document.getElementById("orderForm").addEventListener("submit", function(event) {
+  event.preventDefault();
+
+  const product = document.getElementById("productName").value;
+  const name = document.getElementById("customerName").value;
+  const contact = document.getElementById("customerContact").value || "-";
+
+  const pesan =
+    "Halo AJIN MARKET! Saya ingin memesan produk:\n\n" +
+    "Nama: " + name + "\n" +
+    "Produk: " + product + "\n" +
+    "Kontak/Catatan: " + contact + "\n\n" +
+    "Mohon informasi selanjutnya. Terima kasih!";
+
+  const link = "https://wa.me/" + nomorWhatsApp + "?text=" + encodeURIComponent(pesan);
+
+  window.open(link, "_blank");
+  closeModal();
+});
+</script>
+
+</body>
+</html>
